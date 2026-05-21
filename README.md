@@ -1,12 +1,26 @@
 # API to CSV & Google Sheets Sync
 
+![Project banner](assets/banner.png)
+
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![Output](https://img.shields.io/badge/Output-CSV-green)
 ![Integration](https://img.shields.io/badge/Integration-API%20%2B%20Sheets-orange)
+![Validate](https://github.com/Dreamt-Deer-Waking-Fish/api-to-csv-google-sheets-sync/actions/workflows/validate.yml/badge.svg)
 
 Client-style API integration project for businesses that need data pulled from an external API and converted into a clean spreadsheet-ready format.
 
 The default demo fetches product records from the public Fake Store API, flattens nested JSON fields, exports a normalized CSV, and includes an optional Google Sheets sync path for service-account workflows.
+
+## Visual Preview
+
+![Sample output preview](screenshots/sample_output_preview.png)
+
+| Asset | Link |
+| --- | --- |
+| Architecture diagram | [docs/architecture.md](docs/architecture.md) |
+| Workflow diagram | [docs/workflow.md](docs/workflow.md) |
+| Sample output guide | [docs/sample_outputs.md](docs/sample_outputs.md) |
+| Client delivery notes | [docs/client_delivery_notes.md](docs/client_delivery_notes.md) |
 
 ## Client Problem
 
@@ -33,9 +47,18 @@ api-to-csv-google-sheets-sync/
   README.md
   portfolio_description.md
   docs/
+    architecture.md
+    workflow.md
+    sample_outputs.md
+    client_delivery_notes.md
+  assets/
+    banner.png
+    architecture_diagram.png
+    workflow_diagram.png
   output/
     api_data.csv
   screenshots/
+    sample_output_preview.png
   .env.example
 ```
 
