@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import os
 from pathlib import Path
@@ -41,6 +42,22 @@ def fetch_api_data(endpoint: str, timeout: int, use_system_proxy: bool) -> List[
     if isinstance(data, list):
         return data
     raise ValueError("API response must be a JSON object or array")
+
+
+def load_json_data(input_json: Path) -> List[Dict[str, Any]]:
+    if not input_json.exists():
+        raise FileNotFoundError(f"JSON input file not found: {input_json}")
+    logging.info("Loading API records from local JSON file %s", input_json)
+    with input_json.open("r", encoding="utf-8") as file:
+        data = json.load(file)
+    if isinstance(data, dict):
+        for value in data.values():
+            if isinstance(value, list):
+                return value
+        return [data]
+    if isinstance(data, list):
+        return data
+    raise ValueError("JSON input must be an object or array")
 
 
 def normalize_products(records: List[Dict[str, Any]]) -> pd.DataFrame:
@@ -114,6 +131,7 @@ def sync_to_google_sheets(data: pd.DataFrame, sheet_name: str) -> None:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Fetch public API data, normalize JSON, and export a clean CSV.")
     parser.add_argument("--endpoint", default=DEFAULT_ENDPOINT, help="Public JSON API endpoint.")
+    parser.add_argument("--input-json", default="", help="Optional local JSON file for offline validation or demos.")
     parser.add_argument("--output", default="output/api_data.csv", help="CSV output path.")
     parser.add_argument("--timeout", type=int, default=20, help="API request timeout in seconds.")
     parser.add_argument("--use-system-proxy", action="store_true", help="Use proxy settings from the local environment.")
@@ -129,7 +147,7 @@ def main() -> None:
     configure_logging(output_path.parent)
 
     try:
-        records = fetch_api_data(args.endpoint, args.timeout, args.use_system_proxy)
+        records = load_json_data(Path(args.input_json)) if args.input_json else fetch_api_data(args.endpoint, args.timeout, args.use_system_proxy)
         clean_data = normalize_products(records)
         export_csv(clean_data, output_path)
         if args.sync_google_sheets:

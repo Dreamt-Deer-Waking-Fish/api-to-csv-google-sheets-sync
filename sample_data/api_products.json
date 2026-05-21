@@ -1,0 +1,38 @@
+[
+  {
+    "id": 101,
+    "title": "Inventory Barcode Scanner",
+    "price": 89.99,
+    "description": "Compact USB barcode scanner for retail inventory workflows.",
+    "category": "operations equipment",
+    "image": "https://example.com/barcode-scanner.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 128
+    }
+  },
+  {
+    "id": 102,
+    "title": "Shipping Label Printer",
+    "price": 129.5,
+    "description": "Thermal label printer for ecommerce shipping teams.",
+    "category": "warehouse tools",
+    "image": "https://example.com/label-printer.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 94
+    }
+  },
+  {
+    "id": 103,
+    "title": "POS Cash Drawer",
+    "price": 74.0,
+    "description": "Durable cash drawer for checkout counters and retail stores.",
+    "category": "retail hardware",
+    "image": "https://example.com/cash-drawer.jpg",
+    "rating": {
+      "rate": 4.3,
+      "count": 67
+    }
+  }
+]

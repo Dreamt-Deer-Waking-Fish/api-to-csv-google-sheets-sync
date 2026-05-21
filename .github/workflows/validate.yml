@@ -24,4 +24,4 @@ jobs:
       - name: Validate script
         run: |
           python -m py_compile main.py
-          python main.py
+          python main.py --input-json sample_data/api_products.json --output output/api_data.csv

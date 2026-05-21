@@ -51,6 +51,8 @@ api-to-csv-google-sheets-sync/
     workflow.md
     sample_outputs.md
     client_delivery_notes.md
+  sample_data/
+    api_products.json
   assets/
     banner.png
     architecture_diagram.png
@@ -82,6 +84,12 @@ Run the default API export:
 
 ```powershell
 python main.py
+```
+
+Run offline with the included sample JSON:
+
+```powershell
+python main.py --input-json "sample_data/api_products.json" --output "output/api_data.csv"
 ```
 
 Use a custom endpoint:
@@ -128,12 +136,12 @@ CSV columns:
 
 ```powershell
 python -m py_compile main.py
-python main.py
+python main.py --input-json "sample_data/api_products.json"
 ```
 
 Successful run criteria:
 
-- API request completes
+- API request completes or local JSON sample loads successfully
 - CSV file is exported to `output/api_data.csv`
 - Output includes normalized columns
 - Runtime log reports the exported row count

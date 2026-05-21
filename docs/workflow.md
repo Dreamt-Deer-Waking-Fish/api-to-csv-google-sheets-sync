@@ -14,6 +14,7 @@
 ```powershell
 python main.py
 python main.py --endpoint "https://fakestoreapi.com/products" --output "output/api_data.csv"
+python main.py --input-json "sample_data/api_products.json" --output "output/api_data.csv"
 ```
 
 Optional Google Sheets sync:
