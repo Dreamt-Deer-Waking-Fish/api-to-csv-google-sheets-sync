@@ -1,17 +1,19 @@
-# Screenshot Guide
+# Screenshots
 
-Use these screenshots when presenting this project in an Upwork proposal or GitHub portfolio.
+This folder contains the generated output preview used in the main README.
 
-## Recommended Screenshots
+## Included
 
-1. Terminal showing `python main.py` completing successfully.
-2. `output/api_data.csv` open in Excel, Google Sheets, or a spreadsheet viewer.
-3. Terminal log showing the API endpoint and exported row count.
-4. Project folder showing `README.md`, `.env.example`, `main.py`, and `output/`.
-5. Optional: a Google Sheet populated with synced API rows.
+| File | Purpose |
+| --- | --- |
+| [`sample_output_preview.png`](sample_output_preview.png) | Preview of the normalized CSV export |
 
-## Presentation Notes
+## Related Visual Assets
 
-- Use demo/public data in screenshots unless the client approves otherwise.
-- Do not show service-account JSON files, tokens, or `.env` values.
-- Crop spreadsheet screenshots to show the normalized columns clearly.
+Project-level visuals are stored in [`../assets/`](../assets/):
+
+- `banner.png`
+- `architecture_diagram.png`
+- `workflow_diagram.png`
+
+No additional screenshots are required for the GitHub presentation. For an Upwork case study, optional real-world screenshots could be added later, such as a Google Sheet sync result or terminal run screenshot.
