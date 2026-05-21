@@ -7,6 +7,7 @@ This folder contains the generated output preview used in the main README.
 | File | Purpose |
 | --- | --- |
 | [`sample_output_preview.png`](sample_output_preview.png) | Preview of the normalized CSV export |
+| [`api_csv_spreadsheet_screenshot.png`](api_csv_spreadsheet_screenshot.png) | Spreadsheet screenshot of the exported API CSV |
 
 ## Related Visual Assets
 

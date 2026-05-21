@@ -15,6 +15,8 @@ The default demo fetches product records from the public Fake Store API, flatten
 
 ![Sample output preview](screenshots/sample_output_preview.png)
 
+![API CSV spreadsheet screenshot](screenshots/api_csv_spreadsheet_screenshot.png)
+
 | Asset | Link |
 | --- | --- |
 | Architecture diagram | [docs/architecture.md](docs/architecture.md) |
@@ -61,6 +63,7 @@ api-to-csv-google-sheets-sync/
     api_data.csv
   screenshots/
     sample_output_preview.png
+    api_csv_spreadsheet_screenshot.png
   .env.example
 ```
 
